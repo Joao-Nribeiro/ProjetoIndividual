@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    background-color: #010101;
+    color: white;
+}
+
+/*Header Inicio*/
+
+h1 {
+    color: #F0CB26;
+    padding-left: 60px;
+    font-weight: 300;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+ul {
+    margin-right: 45px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    margin-right: 15px;
+}
+
+li :hover{
+    color: #F0CB26;
+}
+
+.container-header {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid #F0CB26 3px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+/*Header Fim*/
+
+/*Paragrafo Inicio*/
+
+.container-texto{
+    background-color: #232323;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding: 30px;
+    border-bottom: solid #F0CB26 3px;
+}
+
+.container-titulo{
+    color: #F0CB26;
+    padding-bottom: 30px;
+}
+
+.container-titulo h2 {
+    font-weight: 300;
+    font-size: 30px;
+}
+
+p {
+    font-size: 25px;
+    width: 66%;
+    margin-left: 17%;
+}
+/*Paragrafo Fim*/
+
+/*Botões Inicio*/
+button {
+    background-color: #232323;
+    border: solid #F0CB26;
+}
+
+.conatainer-buttons {
+    margin: 30px;
+    background-color: aqua;
+    justify-content: space-around;
+}
+
+button :hover {
+    color: #F0CB26;
+}
+
+button {
+    padding: 5px;
+}
