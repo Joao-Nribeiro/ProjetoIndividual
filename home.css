@@ -83,18 +83,24 @@ p {
 button {
     background-color: #232323;
     border: solid #F0CB26;
+    padding: 5px;
+    width: 150px;
 }
 
 .conatainer-buttons {
     margin: 30px;
-    background-color: aqua;
-    justify-content: space-around;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    margin-left: 15%;
+    width: 67%;
 }
 
 button :hover {
     color: #F0CB26;
 }
 
-button {
-    padding: 5px;
+.texto-botao{
+    font-size: large;
+    padding-left: 13px;
 }
