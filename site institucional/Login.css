@@ -1,38 +1,122 @@
+/*Geral*/
+
 * {
     margin: 0;
     padding: 0;
-    border: 0;
-    font-family:Georgia, 'Times New Roman', Times, serif
+    box-sizing: border-box;
+    border: none;
+    font-weight: 300;
+    color: white;
+}
+.cadastro-class{
+    font-size: 30px;
+}
+h1{
+    color: #F0CB26;
 }
 body {
     background-color: #010101;
-    color: white;
 }
-h1{
-    text-align: center;
-    margin-top: 50px;
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+input{
+    color: black;
+}
+
+a{
+    font-size: 12px;
+}
+
+a:hover{
     color: #F0CB26;
-    font-weight: 300
 }
 
-.lo-login{
-    background-color: #232323;
+.header{
+    text-align: center;
+    margin-top: 5%;
+    font-size: 35px
+}
 
+.organizacao{
+    display: inline-flex;
+}
+
+.login{
+    margin-right: 45px;
+}
+
+.cadastro-class{
+    text-decoration: none;
+}
+/*Login Conatainer*/
+
+#login-container {
+    background-color: #232323;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
     margin-top: 50px;
-    margin-left: 33%;
-    width: 33%;
+    border-radius: 10px;
+    text-align: center;
     border: solid 3px #F0CB26;
 }
-a{
-    text-decoration: none;
-    color: white;
+
+/*Formulario*/
+
+form {
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
-a:hover {
-    color: #F0CB26;
+label, input {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+label {
+    font-size: 16px;
 }
 
 input {
-    width: 250px;
-    height: 30px;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+input:focus {
+    border: 2px solid #F0CB26;
+}
+
+#esqueceu-senha {
+    text-align: right;
+    display: block;
+}
+
+input[type="submit"] {
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    height: 40px;
+    border-radius: 15px;
+    margin-top: 30px;
+    cursor: pointer;
+    background-color: #F0CB26;
+}
+
+/*Footer*/
+
+footer {
+    text-align: center; 
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+footer p {
+    font-size: initial;
 }
