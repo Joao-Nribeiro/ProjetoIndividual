@@ -8,29 +8,31 @@ body {
     background-color: #010101;
     color: white;
 }
-
-.titulo {
+h1{
     text-align: center;
-    display: block;
+    margin-top: 50px;
     color: #F0CB26;
-    margin-top: 45px;
+    font-weight: 300
 }
 
-.lo-login {
-    width: 40%;
-    height: 350px;
+.lo-login{
     background-color: #232323;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-    border: 2px solid #F0CB26;
 
-
+    margin-top: 50px;
+    margin-left: 33%;
+    width: 33%;
+    border: solid 3px #F0CB26;
+}
+a{
+    text-decoration: none;
+    color: white;
 }
 
-.lo-container {
-    display: flex;
-    justify-content: center;
+a:hover {
+    color: #F0CB26;
+}
+
+input {
+    width: 250px;
+    height: 30px;
 }
