@@ -1,0 +1,126 @@
+/*Geral*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    font-weight: 300;
+    color: white;
+}
+.cadastro-class{
+    font-size: 30px;
+    color: #F0CB26
+}
+
+.login{
+    font-size: 30px;
+}
+
+body {
+    background-color: #010101;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+input{
+    color: black;
+}
+
+a{
+    font-size: 12px;
+}
+
+a:hover{
+    color: #F0CB26;
+}
+
+.header{
+    text-align: center;
+    margin-top: 5%;
+    font-size: 35px;
+    color: #F0CB26;
+}
+
+.organizacao{
+    display: inline-flex;
+}
+
+.login{
+    margin-right: 45px;
+}
+
+.cadastro-class, .login{
+    text-decoration: none;
+}
+/*Login Conatainer*/
+
+#login-container {
+    background-color: #232323;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+    text-align: center;
+    border: solid 3px #F0CB26;
+}
+
+/*Formulario*/
+
+form {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+label, input {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+label {
+    font-size: 16px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+input:focus {
+    border: 2px solid #F0CB26;
+}
+
+#esqueceu-senha {
+    text-align: right;
+    display: block;
+}
+
+input[type="submit"] {
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    height: 40px;
+    border-radius: 15px;
+    margin-top: 30px;
+    cursor: pointer;
+    background-color: #F0CB26;
+}
+
+/*Footer*/
+
+footer {
+    text-align: center; 
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+footer p {
+    font-size: initial;
+}
