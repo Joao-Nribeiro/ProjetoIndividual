@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Cadastro.css">
+</head>
+<body>
+    <h1 class="header">It´s Just a Game...</h1>
+    <div id="login-container">
+        <div class="organizacao">
+            <h1><a class="login" href="./Login.html">Login</a></h1>
+            <h1><a class="cadastro-class" href="#">Cadastro</a></h1>
+        </div>
+        <form id="form_cadastro" method="POST" onsubmit="return cadastrar()">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
+            
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" placeholder="Como gostaria de ser chamado">
+
+            <label for="password">Senha:</label>
+            <input type="password" name="senha" id="senha" placeholder="Digite a sua senha">
+
+
+            <input type="submit" value="cadastrar" id="btn_entrar">
+        </form>
+    </div>
+    <footer>
+        <p>It´s Just a Game - J.V.N.R - 2021</p>
+    </footer>
+</body>
+</html>
+
+<script>
+
+    function cadastrar() {
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='Login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+            }
+        });
+
+        return false;
+    }
+
+</script>

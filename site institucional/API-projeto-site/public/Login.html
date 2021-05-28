@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Login.css">
+</head>
+<body>
+    <h1 class="header">It´s Just a Game...</h1>
+    <div id="login-container">
+        <div class="organizacao">
+            <h1 class="login">Login</h1>
+            <h1><a class="cadastro-class" href="./Cadastro.html">Cadastro</a></h1>
+        </div>
+        <form id="form_login" method="POST" onsubmit="return entrar()">
+            <label for="">E-mail:</label>
+            <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
+
+            <label for="password">Senha:</label>
+            <input type="password" name="senha" id="senha" placeholder="Digite a sua senha">
+
+            <a href="#" id="esqueceu-senha">Trolei e esqueci a senha?</a>
+
+            <input type="submit" value="Logar" id="btn_entrar">
+        </form>
+    </div>
+    <footer>
+        <p>It´s Just a Game - J.V.N.R - 2021</p>
+    </footer>
+</body>
+</html>
+
+<script>
+function entrar() {
+    var formulario = new URLSearchParams(new FormData(form_login));
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        body: formulario
+    }).then(resposta => {
+
+        if (resposta.ok) {
+
+            resposta.json().then(json => {
+
+                sessionStorage.login_usuario_meuapp = json.email;
+                sessionStorage.nome_usuario_meuapp = json.username;
+
+                window.location.href = 'Campeonatos.html';
+            });
+
+        } else {
+
+            console.log('Erro de login!');
+
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+    });
+
+    return false;
+}
+
+</script>
