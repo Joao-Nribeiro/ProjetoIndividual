@@ -71,25 +71,19 @@
       </a>
     </div>
 
-<h2>Estátisticas que achamos surpreendetes</h2>
+<h2>Estátisticas que achamos <span class="span_gold">surpreendetes</span></h2>
 
 <div class="graficos">
     <div class="graph">
-      <div class="graph">
         <canvas id="myChartPizza"></canvas>
-      </div>
     </div>
 
     <div class="graph">
-      <div class="graph">
         <canvas id="myChartBar"></canvas>
-      </div>
     </div>
 
-    <div class="graph">
       <div class="graph">
         <canvas id="myChartLine"></canvas>
-      </div>
     </div>
 
   </div>
@@ -101,7 +95,7 @@
 </html>
 
 <script>
-  const labelsPizza = ["Eumesmo_S2", "p3drol_s2", "Sthor_g", "Divisão de kills/Jogador da equipe"];
+  const labelsPizza = ["Eumesmo_S2", "Ninext", "Sthor_g", "Divisão de kills/Jogador da '100C'"];
 
   const dataPizza = {
     labels: labelsPizza,
@@ -109,7 +103,7 @@
       {
         backgroundColor: ["#EAF81B", "#F0CB26", "#F8A31B", "#010101"],
         borderColor: ["#EAF81B", "#F0CB26", "#F8A31B", "#010101"],
-        data: [15, 20, 5, 0],
+        data: [25, 30, 15, 0],
       },
     ],
   };
@@ -160,7 +154,7 @@
       labels: labels,
       datasets: [
         {
-          label: "Evolução K/D por partida",
+          label: "Evolução K/D por partida 'p3drolS2'",
           backgroundColor: "#F0CB26",
           borderColor: "#EAF81B",
           tension: 0.2,
