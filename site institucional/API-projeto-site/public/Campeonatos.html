@@ -1,16 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/Campeonatos.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/Campeonatos.css" />
     <title>Campeonatos</title>
-</head>
-<body>
-   <h1>It´s Just a Game...</h1>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <h1>It´s Just a Game...</h1>
+
     <div class="div_container">
-        <h2>Campeonatos</h2>
+      <div class="div_campeonatos">
+        <div class="div_unico_camp">
+          <span class="span_gold">Campeonato:</span> 1
+          <br />
+          <span class="span_gold">Jogo:</span> Warzone
+          <br />
+          <span class="span_gold">Tipo:</span> Killracing
+          <br />
+          <span class="span_gold">Plataformas:</span> Multi-plataforma
+          <br />
+          <span class="span_gold">Modo:</span> Duos
+        </div>
+
+        <div class="div_unico_camp">
+          <span class="span_gold">Campeonato:</span> 2
+          <br />
+          <span class="span_gold">Jogo:</span> Warzone
+          <br />
+          <span class="span_gold">Tipo:</span> Killracing
+          <br />
+          <span class="span_gold">Plataformas:</span> Multi-plataforma
+          <br />
+          <span class="span_gold">Modo:</span> Duos
+        </div>
+
+        <div class="div_unico_camp">
+          <span class="span_gold">Campeonato:</span> 2
+          <br />
+          <span class="span_gold">Jogo:</span> Warzone
+          <br />
+          <span class="span_gold">Tipo:</span> Killracing
+          <br />
+          <span class="span_gold">Plataformas:</span> Multi-plataforma
+          <br />
+          <span class="span_gold">Modo:</span> Duos
+        </div>
+
+        <div class="div_unico_camp">
+          <span class="span_gold">Campeonato:</span> 2
+          <br />
+          <span class="span_gold">Jogo:</span> Warzone
+          <br />
+          <span class="span_gold">Tipo:</span> Killracing
+          <br />
+          <span class="span_gold">Plataformas:</span> Multi-plataforma
+          <br />
+          <span class="span_gold">Modo:</span> Duos
+        </div>
+      </div>
     </div>
-</body>
+
+    <div class="graph">
+      <div class="graph" style="width: 33%;">
+        <canvas id="myChartPizza"></canvas>
+      </div>
+    </div>
+    
+    <footer>
+      <p>It´s Just a Game - J.V.N.R - 2021</p>
+    </footer>
+  </body>
 </html>
+
+<script>
+  const labelsPizza = ["Eumesmo_S2", "p3drol_s2", "Sthor_g", "Gráfico de Baixas em jogo"];
+
+  const dataPizza = {
+    labels: labelsPizza,
+    datasets: [
+      {
+        backgroundColor: ["#EAF81B", "#F0CB26", "#F8A31B", "#010101"],
+        borderColor: ["#EAF81B", "#F0CB26", "#F8A31B", "#010101"],
+        data: [15, 20, 5, 0],
+      },
+    ],
+  };
+  const configPizza = {
+    type: "pie",
+    data: dataPizza,
+    options: { maintainAspectRatio: false },
+  };
+
+  var myChartPizza = new Chart(document.getElementById("myChartPizza"), configPizza);
+</script>

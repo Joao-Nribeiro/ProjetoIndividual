@@ -54,7 +54,7 @@ li :hover{
 /*Paragrafo Inicio*/
 
 .container-texto{
-    margin-top: 40px;
+    margin-top: 50px;
     background-color: #232323;
     display: flex;
     text-align: center;
@@ -80,6 +80,10 @@ p {
     font-size: 23px;
     width: 66%;
     margin-left: 17%;
+}
+
+.span_gold {
+    color: #F0CB26;
 }
 /*Paragrafo Fim*/
 
