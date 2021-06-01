@@ -23,8 +23,13 @@ h1 {
 }
 
 .div_campeonatos {
-    margin-left: 110px;
-    width: 86%;
+    margin-left: 100px;
+    width: 90%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
 .div_unico_camp {
@@ -34,6 +39,11 @@ h1 {
     font-size: 18px;
     border: solid #F0CB26 2px;
     padding: 1%;
+    width: 245px;
+}
+
+h2 {
+    text-align: center;
 }
 
 .span_gold {
@@ -46,7 +56,12 @@ h1 {
     height: 250px;
     margin: 10px;
     padding: 5px;
-  }
+    margin-left: 45px;
+}
+
+.graph canvas{
+ width: 33%;
+}
 
 footer {
     text-align: center;  

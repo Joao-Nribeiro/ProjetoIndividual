@@ -13,18 +13,21 @@
 
     <div class="div_container">
       <div class="div_campeonatos">
-        <div class="div_unico_camp">
+        <a href="Login.html">
+          <div class="div_unico_camp">
           <span class="span_gold">Campeonato:</span> 1
           <br />
           <span class="span_gold">Jogo:</span> Warzone
           <br />
-          <span class="span_gold">Tipo:</span> Killracing
+          <span class="span_gold">Tipo:</span> Lobby fechado
           <br />
           <span class="span_gold">Plataformas:</span> Multi-plataforma
           <br />
-          <span class="span_gold">Modo:</span> Duos
+          <span class="span_gold">Modo:</span> Squad
         </div>
-
+       </a> 
+      
+       <a href="Login.html">
         <div class="div_unico_camp">
           <span class="span_gold">Campeonato:</span> 2
           <br />
@@ -36,39 +39,61 @@
           <br />
           <span class="span_gold">Modo:</span> Duos
         </div>
+      </a>
 
+      <a href="Login.html">
         <div class="div_unico_camp">
-          <span class="span_gold">Campeonato:</span> 2
+          <span class="span_gold">Campeonato:</span> 3
           <br />
-          <span class="span_gold">Jogo:</span> Warzone
+          <span class="span_gold">Jogo:</span> Fortnite
           <br />
-          <span class="span_gold">Tipo:</span> Killracing
+          <span class="span_gold">Tipo:</span> Pontuação
           <br />
-          <span class="span_gold">Plataformas:</span> Multi-plataforma
+          <span class="span_gold">Plataformas:</span> PC
           <br />
-          <span class="span_gold">Modo:</span> Duos
+          <span class="span_gold">Modo:</span> Trios
         </div>
+      </a>
 
-        <div class="div_unico_camp">
-          <span class="span_gold">Campeonato:</span> 2
-          <br />
-          <span class="span_gold">Jogo:</span> Warzone
-          <br />
-          <span class="span_gold">Tipo:</span> Killracing
-          <br />
-          <span class="span_gold">Plataformas:</span> Multi-plataforma
-          <br />
-          <span class="span_gold">Modo:</span> Duos
+      <a href="Login.html">
+          <div class="div_unico_camp">
+            <span class="span_gold">Campeonato:</span> 4
+            <br />
+            <span class="span_gold">Jogo:</span> Freefire
+            <br />
+            <span class="span_gold">Tipo:</span> Battle Royale
+            <br />
+            <span class="span_gold">Plataformas:</span> Mobile
+            <br />
+            <span class="span_gold">Modo:</span> Duos
+          </div>
         </div>
+      </a>
+    </div>
+
+<h2>Estátisticas que achamos surpreendetes</h2>
+
+<div class="graficos">
+    <div class="graph">
+      <div class="graph">
+        <canvas id="myChartPizza"></canvas>
       </div>
     </div>
 
     <div class="graph">
-      <div class="graph" style="width: 33%;">
-        <canvas id="myChartPizza"></canvas>
+      <div class="graph">
+        <canvas id="myChartBar"></canvas>
       </div>
     </div>
-    
+
+    <div class="graph">
+      <div class="graph">
+        <canvas id="myChartLine"></canvas>
+      </div>
+    </div>
+
+  </div>
+
     <footer>
       <p>It´s Just a Game - J.V.N.R - 2021</p>
     </footer>
@@ -76,7 +101,7 @@
 </html>
 
 <script>
-  const labelsPizza = ["Eumesmo_S2", "p3drol_s2", "Sthor_g", "Gráfico de Baixas em jogo"];
+  const labelsPizza = ["Eumesmo_S2", "p3drol_s2", "Sthor_g", "Divisão de kills/Jogador da equipe"];
 
   const dataPizza = {
     labels: labelsPizza,
@@ -95,4 +120,61 @@
   };
 
   var myChartPizza = new Chart(document.getElementById("myChartPizza"), configPizza);
+
+
+  const labelsBar = [
+    "Ben$a",
+    "100C",
+    "Juxt",
+    "Slxsh",
+  ];
+
+  const dataBar = {
+    labels: labelsBar,
+    datasets: [
+      {
+        label: "Vitórias por time",
+        backgroundColor: [
+        "#F2680A",
+        "#D99318",
+        "#F0CB26",
+        "#D9D818",
+        ],
+        data: [100, 75, 200, 33],
+      },
+    ],
+  };
+
+  const configBar = {
+    type: "bar",
+    data: dataBar,
+    options: { maintainAspectRatio: false },
+  };
+  var myChartBar = new Chart(
+    document.getElementById("myChartBar"),
+    configBar
+  );
+
+  const labels = ["1°", "2°", "3°", "4°", "5°"];
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: "Evolução K/D por partida",
+          backgroundColor: "#F0CB26",
+          borderColor: "#EAF81B",
+          tension: 0.2,
+          data: [1.23, 0.75, 3.45, 4.75, 6.03],
+        },
+      ],
+    };
+
+    const config = {
+      type: "line",
+      data,
+      options: { maintainAspectRatio: false },
+    };
+
+    var myChartLine = new Chart(document.getElementById("myChartLine"), config);
+  
 </script>
