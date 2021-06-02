@@ -4,41 +4,56 @@ use its_just_a_game;
 
 create table usuario (
 idUsuario int primary key auto_increment,
-email varchar(45),
-senha varchar(45)
+email varchar (40),
+username varchar(40),
+senha varchar(40)
 );
 
 select * from usuario;
 
-create table Equipe (
-idEquipe int primary key auto_increment,
-nomeEquipe varchar(40),
-vitoria int,
-partidas int,
-eliminacoes int,
-KD decimal(4,2)
+create table players(
+idPlayer int primary key auto_increment,
+nickname varchar(45),
+plataforma varchar(45),
+fkCapitao int,
+foreign key (fkCapitao) references players(idplayer),
+fkUsuario int,
+foreign key (fkUsuario) references usuario(idusuario),
+fkTimeCamp int,
+foreign key (fkTimeCamp) references timeCamp(idTimeCamp)
+) auto_increment = 1000;
+
+select * from players;
+
+create table timeCamp (
+idTimeCamp int primary key,
+nomeTime varchar(45),
+kdTime decimal(4,2)
 );
 
-select * from Equipe;
+select * from timeCamp;
 
-create table jogadorCamp(
-idPlayer int primary key auto_increment,
-nomeJogador varchar(40),
-email varchar(40),
-fkCapitao int,
-foreign key (fkCapitao) references jogadorCamp(idPlayer),
-fkEquipe int,
-foreign key(fkEquipe) references Equipe(idEquipe),
-fkUsuario int,
-foreign key(fkUsuario) references Usuario(idUsuario)
-)auto_increment = 1000;
+create table campeonatos(
+idCampeonato int primary key auto_increment,
+jogo varchar(45),
+tipo varchar(45),
+plataformaCamp varchar(45),
+modo varchar(45)
+);
 
-select * from jogadorCamp;
+select * from campeonatos;
 
-insert into usuario values (null, 'joao.ribeiro@hotmail.com', '12345');
+create table TimeCampCampeonatos(
+fkTime int,
+foreign key (fkTime) references timeCamp(idTimeCamp),
+fkCampeonato int,
+foreign key (fkCampeonato) references campeonatos(idCampeonato),
+primary key(fkTime, fkCampeonato),
+dataCamp date,
+patrocinador varchar(45),
+premio decimal(6,2)
+);
 
-insert into Equipe values (null, 'os brabo',5, 5, 120, '6.50');
+select * from TimeCampCampeonatos;
 
-insert into jogadorCamp values (null, 'p3drol_s2', 'pedroBatatao@gmail.com', null, 1, 1),
-								(null, 'Eu_mesmoS2', 'joao.ribeiro@hotmail.com', 1000, 1, 1),
-								(null, 'ThorGB', 'thor_guevara@outlook.com', 1000, 1, 1);
+drop database its_just_a_game;

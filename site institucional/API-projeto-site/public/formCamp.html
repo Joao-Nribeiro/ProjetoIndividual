@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Formulario para o camp</title>
     <link rel="stylesheet" href="./css/Login.css">
 </head>
 <body>
@@ -31,36 +31,3 @@
     </footer>
 </body>
 </html>
-
-<script>
-function entrar() {
-    var formulario = new URLSearchParams(new FormData(form_login));
-    fetch("/usuarios/autenticar", {
-        method: "POST",
-        body: formulario
-    }).then(resposta => {
-
-        if (resposta.ok) {
-
-            resposta.json().then(json => {
-
-                sessionStorage.login_usuario_meuapp = json.email;
-                sessionStorage.nome_usuario_meuapp = json.username;
-
-                window.location.href = 'Campeonatos.html';
-            });
-
-        } else {
-
-            console.log('Erro de login!');
-
-            resposta.text().then(texto => {
-                console.error(texto);
-            });
-        }
-    });
-
-    return false;
-}
-
-</script>
