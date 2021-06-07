@@ -7,88 +7,102 @@
     <link rel="stylesheet" href="./css/Campeonatos.css" />
     <title>Campeonatos</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="./Jogo.js"></script>
   </head>
   <body>
     <h1>It´s Just a Game...</h1>
 
+    <div id="div_container_buttons" style="display: none">
+      <h2 class="h2-sim-nao">Já jogou o campeonato selecionado?</h2>
+      <div class="engloba_button">
+        <button>Sim</button>
+        <button><a href="./formCamp.html">Não</a></button>
+      </div>
+    </div>
     
-    <div class="div_container">
-      <h2>Selecione qual campeonato deseja jogar <span class="span_gold">(Atualizados Semanalmente)</span></h2>
-      <div class="div_campeonatos">
-        <a href="formCamp.html">
-          <div class="div_unico_camp">
-          <span class="span_gold">Campeonato:</span> 1
-          <br />
-          <span class="span_gold">Jogo:</span> Warzone
-          <br />
-          <span class="span_gold">Tipo:</span> Lobby fechado
-          <br />
-          <span class="span_gold">Plataformas:</span> Multi-plataforma
-          <br />
-          <span class="span_gold">Modo:</span> Squad
+    <div id="div_engloba">
+      <div class="div_container">
+        <h2>
+          Selecione qual campeonato deseja jogar
+          <span class="span_gold">(Atualizados Semanalmente)</span>
+        </h2>
+        <div class="div_campeonatos">
+          <a href="#" onclick="jogar()">
+            <div class="div_unico_camp">
+              <span class="span_gold">Campeonato:</span> 1
+              <br />
+              <span class="span_gold">Jogo:</span> Warzone
+              <br />
+              <span class="span_gold">Tipo:</span> Lobby fechado
+              <br />
+              <span class="span_gold">Plataformas:</span> Multi-plataforma
+              <br />
+              <span class="span_gold">Modo:</span> Squad
+            </div>
+          </a>
+
+          <a href="#" onclick="jogar()">
+            <div class="div_unico_camp">
+              <span class="span_gold">Campeonato:</span> 2
+              <br />
+              <span class="span_gold">Jogo:</span> Warzone
+              <br />
+              <span class="span_gold">Tipo:</span> Killracing
+              <br />
+              <span class="span_gold">Plataformas:</span> Multi-plataforma
+              <br />
+              <span class="span_gold">Modo:</span> Duos
+            </div>
+          </a>
+
+          <a href="#" onclick="jogar()">
+            <div class="div_unico_camp">
+              <span class="span_gold">Campeonato:</span> 3
+              <br />
+              <span class="span_gold">Jogo:</span> Fortnite
+              <br />
+              <span class="span_gold">Tipo:</span> Pontuação
+              <br />
+              <span class="span_gold">Plataformas:</span> PC
+              <br />
+              <span class="span_gold">Modo:</span> Trios
+            </div>
+          </a>
+
+          <a href="#" onclick="jogar()">
+            <div class="div_unico_camp">
+              <span class="span_gold">Campeonato:</span> 4
+              <br />
+              <span class="span_gold">Jogo:</span> Freefire
+              <br />
+              <span class="span_gold">Tipo:</span> Battle Royale
+              <br />
+              <span class="span_gold">Plataformas:</span> Mobile
+              <br />
+              <span class="span_gold">Modo:</span> Duos
+            </div>
+          </a>
         </div>
-       </a> 
-      
-       <a href="formCamp.html">
-        <div class="div_unico_camp">
-          <span class="span_gold">Campeonato:</span> 2
-          <br />
-          <span class="span_gold">Jogo:</span> Warzone
-          <br />
-          <span class="span_gold">Tipo:</span> Killracing
-          <br />
-          <span class="span_gold">Plataformas:</span> Multi-plataforma
-          <br />
-          <span class="span_gold">Modo:</span> Duos
+      </div>
+
+      <h2>
+        Estátisticas que achamos <span class="span_gold">surpreendetes</span>
+      </h2>
+
+      <div class="graficos">
+        <div class="graph">
+          <canvas id="myChartPizza"></canvas>
         </div>
-      </a>
 
-      <a href="formCamp.html">
-        <div class="div_unico_camp">
-          <span class="span_gold">Campeonato:</span> 3
-          <br />
-          <span class="span_gold">Jogo:</span> Fortnite
-          <br />
-          <span class="span_gold">Tipo:</span> Pontuação
-          <br />
-          <span class="span_gold">Plataformas:</span> PC
-          <br />
-          <span class="span_gold">Modo:</span> Trios
+        <div class="graph">
+          <canvas id="myChartBar"></canvas>
         </div>
-      </a>
 
-      <a href="formCamp.html">
-          <div class="div_unico_camp">
-            <span class="span_gold">Campeonato:</span> 4
-            <br />
-            <span class="span_gold">Jogo:</span> Freefire
-            <br />
-            <span class="span_gold">Tipo:</span> Battle Royale
-            <br />
-            <span class="span_gold">Plataformas:</span> Mobile
-            <br />
-            <span class="span_gold">Modo:</span> Duos
-          </div>
+        <div class="graph">
+          <canvas id="myChartLine"></canvas>
         </div>
-      </a>
+      </div>
     </div>
-
-<h2>Estátisticas que achamos <span class="span_gold">surpreendetes</span></h2>
-
-<div class="graficos">
-    <div class="graph">
-        <canvas id="myChartPizza"></canvas>
-    </div>
-
-    <div class="graph">
-        <canvas id="myChartBar"></canvas>
-    </div>
-
-      <div class="graph">
-        <canvas id="myChartLine"></canvas>
-    </div>
-
-  </div>
 
     <footer>
       <p>It´s Just a Game - J.V.N.R - 2021</p>
@@ -97,7 +111,12 @@
 </html>
 
 <script>
-  const labelsPizza = ["Eumesmo_S2", "Ninext", "Sthor_g", "Divisão de kills/Jogador da '100C'"];
+  const labelsPizza = [
+    "Eumesmo_S2",
+    "Ninext",
+    "Sthor_g",
+    "Divisão de kills/Jogador da '100C'",
+  ];
 
   const dataPizza = {
     labels: labelsPizza,
@@ -115,27 +134,19 @@
     options: { maintainAspectRatio: false },
   };
 
-  var myChartPizza = new Chart(document.getElementById("myChartPizza"), configPizza);
+  var myChartPizza = new Chart(
+    document.getElementById("myChartPizza"),
+    configPizza
+  );
 
-
-  const labelsBar = [
-    "Ben$a",
-    "100C",
-    "Juxt",
-    "Slxsh",
-  ];
+  const labelsBar = ["Ben$a", "100C", "Juxt", "Slxsh"];
 
   const dataBar = {
     labels: labelsBar,
     datasets: [
       {
         label: "Vitórias por time",
-        backgroundColor: [
-        "#F2680A",
-        "#D99318",
-        "#F0CB26",
-        "#D9D818",
-        ],
+        backgroundColor: ["#F2680A", "#D99318", "#F0CB26", "#D9D818"],
         data: [100, 75, 200, 33],
       },
     ],
@@ -146,31 +157,27 @@
     data: dataBar,
     options: { maintainAspectRatio: false },
   };
-  var myChartBar = new Chart(
-    document.getElementById("myChartBar"),
-    configBar
-  );
+  var myChartBar = new Chart(document.getElementById("myChartBar"), configBar);
 
   const labels = ["1°", "2°", "3°", "4°", "5°"];
-    const data = {
-      labels: labels,
-      datasets: [
-        {
-          label: "Evolução K/D por partida 'p3drolS2'",
-          backgroundColor: "#F0CB26",
-          borderColor: "#EAF81B",
-          tension: 0.2,
-          data: [1.23, 0.75, 3.45, 4.75, 6.03],
-        },
-      ],
-    };
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: "Evolução K/D por partida 'p3drolS2'",
+        backgroundColor: "#F0CB26",
+        borderColor: "#EAF81B",
+        tension: 0.2,
+        data: [1.23, 0.75, 3.45, 4.75, 6.03],
+      },
+    ],
+  };
 
-    const config = {
-      type: "line",
-      data,
-      options: { maintainAspectRatio: false },
-    };
+  const config = {
+    type: "line",
+    data,
+    options: { maintainAspectRatio: false },
+  };
 
-    var myChartLine = new Chart(document.getElementById("myChartLine"), config);
-  
+  var myChartLine = new Chart(document.getElementById("myChartLine"), config);
 </script>

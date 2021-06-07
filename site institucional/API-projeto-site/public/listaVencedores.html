@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/listaVencedores.css" />
+    <script type="text/javascript" src="./Jogo.js"></script>
+  </head>
+  <body>
+    <div class="div-h2">
+      <h1>It´s Just a Game...</h1>
+      <button id="botao_resultado" onclick="ver_resultados()">
+        Ver resultados
+      </button>
+      <h2 id="resultado" style="display: none">Resultados</h2>
+    </div>
+    <div id="lista_vencedores" style="display: none">
+      <div id="itens_lista"></div>
+      <div id="pontuacao_lista"></div>
+    </div>
+
+    <h3 id="h3_div" style="display: none;">
+      <span class="color-gold">Obrigado por jogar!</span> Entre semanalmente para mais campeonatos!
+    </h3>
+
+    <a style="display: none;" id="link" href="./Campeonatos.html">Voltar para campeonatos</a>
+
+    <footer>
+      <p>It´s Just a Game - J.V.N.R - 2021</p>
+    </footer>
+  </body>
+</html>
+
+<script>
+  function ver_resultados() {
+    botao_resultado.style.display = "none";
+    resultado.style.display = "block";
+    lista_vencedores.style.display = "block";
+    h3_div.style.display = "block";
+    link.style.display = "block";
+
+    var lista_times = [" - Ben$a", " - Juxt", " - 100C", " - FaZe", " - Liquid", " - NinjasPijamas", " - Pain"];
+    var posicao = ["1°", "2°", "3°", "4°", "5°", "6°", "7°"];
+    var pontuacao = ["1200", "1100", "900", "950", "800", "700", "625"];
+
+    itens_lista.innerHTML = "";
+    for (var contador = 0; lista_times.length > contador; contador++) {
+      if (contador == 6) {
+        itens_lista.innerHTML += `<span style="color: #F0CB26">${posicao[contador]}</span> ${lista_times[contador]}<br>`;
+        pontuacao_lista.innerHTML += ` <span style="color: #F0CB26">Pontuação</span> - ${pontuacao[contador]}<br>`;
+      } else {
+        itens_lista.innerHTML += `<span style="color: #F0CB26">${posicao[contador]}</span> ${lista_times[contador]}<br><br>`;
+        pontuacao_lista.innerHTML += ` <span style="color: #F0CB26">Pontuação</span> - ${pontuacao[contador]}<br><br>`;
+      }
+    }
+  }
+</script>
