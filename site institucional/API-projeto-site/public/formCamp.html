@@ -18,39 +18,40 @@
             <input type="text" name="nomeTime" id="nomeTime" placeholder="Digite o nome do seu time">
 
             <label for="">K/D do time:</label>
-            <input type="number" name="kdTime" id="kdTime" placeholder="Digite o KD do seu time">
+            <input name="kdTime" id="kdTime" placeholder="Digite o KD do seu time">
 
             <input type="submit" value="cadastrar" id="btn_cadastrar">
         </form>
     </div>
     <footer>
-        <p>It´s Just a Game - J.V.N.R - 2021</p>
+        <p>It´s Just a Game - J.V.N.R - 2021 - email - itsJustAGame@support.com</p>
     </footer>
 </body>
 </html>
 
 <script>
-function cadastrar() {
-    var formulario = new URLSearchParams(new FormData(form_cadastro_time));
-        fetch("/usuarios/cadastrar", {
+
+    function cadastrar() {
+        var formulario = new URLSearchParams(new FormData(form_cadastro_time));
+        console.log(formulario);
+        fetch("/usuarios/cadastrar_time", {
             method: "POST",
             body: formulario
         }).then(function (response) {
             
             if (response.ok) {
 
-               alert("Equipe cadastrada com sucesso. Boa sorte!");
+                alert("Time cadastrado com sucesso, boa jogatina");
 
             } else {
 
                 console.log('Erro de cadastro!');
                 response.text().then(function (resposta) {
-                    div_erro.innerHTML = resposta;
+                    alert("Não cadastrou, burros!");
                 });
             }
         });
 
         return false;
     }
-
 </script>
