@@ -26,7 +26,7 @@ foreign key (fkTimeCamp) references timeCamp(idTimeCamp)
 select * from players;
 
 create table timeCamp (
-idTimeCamp int primary key,
+idTimeCamp int primary key auto_increment,
 nomeTime varchar(45),
 kdTime decimal(4,2)
 );
