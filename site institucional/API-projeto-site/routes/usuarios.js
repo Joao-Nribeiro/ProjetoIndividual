@@ -106,4 +106,20 @@ router.get('/', function(req, res, next) {
   	});
 });
 
+router.post('/cadastrar_time', function(req, res, next) {
+	console.log('Criando um time');
+	
+	Usuario.create({
+		nomeTime : req.body.nomeTime,
+		kdTime: req.body.kdTime
+	}).then(resultado => {
+		console.log(`Registro criado: ${resultado}`)
+        res.send(resultado);
+    }).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+  	});
+});
+
+
 module.exports = router;
